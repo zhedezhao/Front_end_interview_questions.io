@@ -30,7 +30,8 @@
 
 表示其本身需要使用字符引用，即表示字符的特殊编码，每个字符引用以 & 开始，分号 ; 结束
 原义字符 	等价字符引用
-<!-- 
+
+<table>
 <thead>
 <tr>
 <th style="text-align:left"><strong>原义字符</strong></th>
@@ -62,7 +63,8 @@
 <td style="text-align:left">空格</td>
 <td style="text-align:left">&amp;nbsp;</td>
 </tr>
-</tbody> -->
+</tbody>
+</table>
 
 ## HTML 注释如何写 ？
 ##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
@@ -431,8 +433,8 @@ MIMEtype（现在称为“媒体类型（media type）”，但有时也是“�
 
 Web 常见的 MIME 类型
 
-
-<!-- <thead>
+<table>
+<thead>
 <tr>
 <th style="text-align:left"><strong>扩展名</strong></th>
 <th style="text-align:left"><strong>文档类型</strong></th>
@@ -770,7 +772,8 @@ Web 常见的 MIME 类型
 <td style="text-align:left">7-zip archive</td>
 <td style="text-align:left">application/x-7z-compressed</td>
 </tr>
-</tbody> -->
+</tbody>
+</table>
 
 ## 什么是 ARIA？
 ##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ★ ★ ★
@@ -1002,8 +1005,8 @@ HTML 头部元素，即 `<head>` 元素
 
 * 章节
 
-
-<!-- <thead>
+<table>
+<thead>
 <tr>
 <th style="text-align:left"><strong>元素</strong></th>
 <th style="text-align:left"><strong>描述</strong></th>
@@ -1050,12 +1053,13 @@ HTML 头部元素，即 `<head>` 元素
 <td style="text-align:left">&lt;h1&gt;-&lt;h6&gt;</td>
 <td style="text-align:left">标题元素实现了六层文档标题，&lt;h1&gt; 是最大的标题，&lt;h6&gt; 是最小的标题<br>标题元素简要地描述章节的主题</td>
 </tr>
-</tbody> -->
+</tbody>
+</table>
 
 * 组织
 
-
-<!-- <thead>
+<table>
+<thead>
 <tr>
 <th style="text-align:left"><strong>元素</strong></th>
 <th style="text-align:left"><strong>描述</strong></th>
@@ -1114,7 +1118,8 @@ HTML 头部元素，即 `<head>` 元素
 <td style="text-align:left">&lt;div&gt;</td>
 <td style="text-align:left">代表一个通用的容器，没有特殊含义</td>
 </tr>
-</tbody> -->
+</tbody>
+</table>
 
 
 （2）为什么我们需要结构化？
@@ -1330,4 +1335,1627 @@ HTML 布局元素通常是指内容分区元素，它将文档内容从逻辑上
 * `maximum-scale=1.0` 表示最大缩放比例 1.0
 
 * `user-scalable=yes` 表示用户是否可以调整缩放比例
+***
+# 属性
+## 什么是 HTML 属性 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+HTML 元素拥有属性（Attribute）
+
+* HTML 属性不会出现在实际的内容中
+* HTML 属性包含元素的额外信息，被用来
+    * 配置元素
+    * 调整元素的行为
+
+## HTML 属性必须包括哪些内容 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+一个属性必须包含如下内容
+
+* 一个空格，在属性和元素名称之间
+* 属性名称，后面跟着一个等于号
+* 一个属性值，由一对引号“”引起来
+
+## 什么是布尔属性 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+布尔属性是值可以省略的属性
+
+* 只声明属性名，等同于声明设置一个属性值与属性名相同的属性
+* 不声明属性名，则表示该元素没有该属性，不具备该属性值所描述的配置或行为
+
+## 属性值的引号的可以省略吗 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+属性值省略引号
+
+* 这是被允许的
+* 当属性值包含空格、引号时，可能让浏览器误解标记
+* 始终建议添加引号
+    * 避免浏览器误解标记的问题
+    * 使代码更易读
+    * 单引号或者双引号都可以成对使用，这只是风格问题，但不能混用
+
+## 如何链接到 HTML 文档的特定部分（文档片段）？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+链接到 HTML 文档的特定部分，即文档片段，需要
+
+* 给要链接的元素分配一个 `id` 属性
+* 链接到特定 `id` 设置 `href` 属性
+    * 不同文档，在 URL 结尾使用 `#` 指向 `id`
+    * 同一文档，直接使用 `#` 指向 `id`
+
+## 浏览器如何对待引号没有闭合的属性，如何理解 HTML 的宽松解析 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+（1）浏览器只解释非编译 HTML
+
+* 浏览器不会将 HTML 编译成其它形式，而是直接解释并显示结果
+* 浏览器解析 HTML 的过程比编程语言编译运行的过程要宽松得多
+
+（2）什么是 HTML 的宽松解析
+
+* 通常写错代码会带来以下两种主要类型的错误
+    * 语法错误：由通常是拼写错误，熟悉语法并理解错误信息后很容易修复
+    * 逻辑错误：不存在语法错误，但代码运行结果不符合预期。通常逻辑错误比语法错误更难修复，因为无法得到指向错误源头的信息
+    因为浏览器是以宽松模式解析 HTML
+    * HTML 本身不容易出现语法错误，出现语法错误时，浏览器仍会继续解析 HTML
+    * 浏览器使用内建规则来解析语法错误，例如未关闭标签，未关闭属性和嵌套混乱元素
+        * 标签，属性和层级会被自动修复
+        * 修复结果不一定符合开发者预期
+        * 存在 XSS，版式混乱，内容错误等隐患
+
+（3）为什么 HTML 要宽松解析
+
+因为 Web 创建的初心就是：
+
+* 人人可发布内容，不去纠结代码语法
+* 如果 Web 以严格风格起步，也许就不会像今天这样流行
+
+## 什么是微数据 ？
+##### 难度：★ ★ ★ ★ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+HTML5 微数据允许通过特定的机器可读的标签来标记内容，只需向已有内容添加一组键值对
+
+微数据由键值对组成，每一组称为项，每个键值对可以用属性表示
+
+* itemscope
+    * 用来声明一组微数据
+
+* itemprop
+    * 用来声明键名
+        * 属性不同，值相同：一个标签，声明多个键名，空格分隔
+        * 属性相同，值不同：多个标签，声明相同键名
+        键值
+        * 通常是字符串，即元素内容
+        * URL
+            * `<a>` 标签的 `href` 属性
+            * `<img>` 标签的 `src` 属性
+        * value
+            * 对于不适合给人类展示的内容，使用 `value` 声明内容
+            * `<meter>` 标签的 `value` 属性
+            * `<time>` 标签的 `datetime` 属性
+        * itemscope
+            * 键值可以嵌套另一组微数据
+
+    itemref
+    用来关联不在 imtescope 所在标签的后代的属性
+
+    itemtype
+        指定结构化数据词汇的 URL，其中定义的标准且唯一的词汇用于 itemprop
+        与 itemscope 一起使用用于设置词汇的生效范围
+        使用词汇表，可以增加词汇的复用度，保持属性名唯一，避免冲突
+        Google 和其它主流搜索引擎支持 schema.org 结构化数据词汇，便于在搜索结果中丰富展示内容和形式
+
+    itemid
+        与 itemtype 一起使用，用于声明全局唯一标识符
+
+## 如何创建一个下载链接 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+设置 `a` 标签的 `download` 属性
+
+* 指示浏览器下载 URL 而不是导航到 URL，提示用户将其保存为本地文件
+* 属性值可以在保存提示中用作预先填写的文件名
+    * 斜杠 `/` 和反斜杠 `\` 会被转换为下划线
+    * 大多数文件系统限制一些标点符号，浏览器会相应地调整建议名称
+    * `download` 属性仅适用于同源 URLs
+    * 使用 `blob: URLs` 和 `data: URLs`方便用户下载 JavaScript 方式生成内容
+    * 例如 Canvas，Base64 编码图片等
+* 如果 HTTP 头存在 `Content-Disposition` 属性
+    * 属性值不同于 `download` 设置值，HTTP 头优先使用此属性
+    * 属性值设置为 `inline`
+        * 火狐优先 `Content-Disposition` 的属性值
+        * Chrome 优先 `download` 的属性值（如果与 `Content-Disposition` 不同）
+***
+# 图片
+## 为什么要设置 alt 属性？
+###### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+为什么要设置 alt 属性，原因是：
+
+* 增强可访问性：用户有视力障碍，可以通过屏幕阅读器浏览图片描述
+* 图片加载无法的替换文本：
+    * 例如图片路径、文件名拼错，资源下载失败
+    * 用户使用不支持图片的浏览器，如 Lynx
+    * 用户主动关闭图片显示以减少数据的传输
+* SEO：便于网页搜索、图片搜索等索引图片和排名
+
+## lt 属性应该填写什么内容 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ★ ★ ☆
+
+alt 属性填写内容根据图片类型决定
+
+* 装饰类型
+    填写空 alt。此类图片不应使用 <img> 标签，CSS background images 是更优方案
+
+* 文本类型
+    填写文本本身。应避免将文本放到图像里，CSS 修饰文本是更优方案
+
+* 链接类型
+    提供无障碍连接文本。如链接到 XX
+
+* 内容类型
+    搜索引擎会通过图片 alt title figure 及上下文，机器或人工标注读取图片信息
+    屏幕阅读软件也会朗读上下文
+    所以，如果已经在上下文中说明了图片，`alt` 可以留空
+    如果没有，`alt` 应是对图片本身内容的描述，语句通顺。不应过长，更不应堆砌关键字
+
+## 为什么要指定图片高度和宽度属性 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+`width` 和 `height` 用来声明图片的宽度和高度
+
+* 如果图片地址错误或者下载被禁用，浏览器会显式地为图片留下一定空间
+* 无需等待图片元数据下载完毕，先行渲染图片占位符，加载更快速更流畅，避免版式跳动
+* width 和 height 应始终设置真实尺寸，不应该使用 HTML 属性来改变图片的大小
+* 如果需要改变图片尺寸，应使用 CSS 而不是 HTML
+
+## title 属性应该填写什么内容 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ★ ☆ ☆
+
+类似于超链接，`title` 属性用来提供进一步的支持信息
+
+* 省略该属性：这个元素与最近祖先的标题仍然是相关的，可以用作元素的提示信息
+* 值为空字符串：这个元素与最近祖先的标题是不相关的，不应用于这个元素的提示信息
+* 与 `alt` 同时存在，`alt` 用于图片描述，`title` 用于进一步支持信息，比如点击放大
+
+## 如何设置图片的说明文字 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ★ ☆ ☆
+
+设置图片的说明文字的方法如下：
+
+* 在图片的上下文中描述图片
+* 使用图片的 `alt` 标签描述图片
+* 使用图片的 `title`标签配合祖先标题描述图片
+    * 省略该属性：这个元素与最近祖先的标题仍然是相关的，可以用作元素的提示信息
+    * 值为空字符串：这个元素与最近祖先的标题是不相关的，不应用于这个元素的提示信息
+    * 与 `alt` 同时存在，`alt` 用于图片描述，title 用于进一步支持信息，比如点击放大
+* 使用 `<div>` 和 `<p>` 组合
+```html
+<div>
+  <img>
+  <p>图片说明文字</p>
+</div>
+```
+* 使用 `<figure>` 和 `<figcaption>` 组合
+```HTML
+<figure>
+  <img>
+  <figcaption>图片说明文字</figcaption>
+</figure
+```
+
+## HTML 图像和 CSS 图像的区别是什么 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+* HTML 图像
+* 指用 `<img>` 标签插入的图像，可以设置 `alt` 属性，提供备选文本，可以被屏幕阅读器、蜘蛛识别
+
+* CSS 图像
+* 指用 `background-image` 和其它 `background-*` 属性共同放置的图像。用来提升视觉效果，没有语义，不能提供备选文本，难以被屏幕阅读器、蜘蛛识别
+
+如果图像对内容有意义，利于 SEO，提高可访问性，应使用 HTML 图像
+
+如果图像对内容没意义，装饰作用，或者故意提高图片被采集、保存的难度，应使用 CSS 图像
+
+## 什么是矢量图形，它和位图的区别是什么 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+* 矢量图形
+    使用算法定义，包含了图形和路径的定义，电脑可以根据这些定义计算出它们在屏幕上渲染时应该呈现的样子。SVG 格式可以让我们创造用于 Web 的精彩的矢量图形。
+
+* 位图
+    使用像素网格定义，包含了每个像素额位置和它的色彩信息。流行的位图格式包含 Bitmap（ `.bmp` ）PNG（ `.png` ）JPEG（ `.jpg` ）和 GIF（ `.gif` ）
+
+* 区别
+    矢量图通常体积更小，放大后，效果很好且清晰，透明无毛边。
+
+位图通常体积较大，放大后，图片变得像素化，透明有毛边。
+
+## 什么是 SVG？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+SVG，全称是 Scalable Vector Graphics，可缩放矢量图形，是用于描述二维的矢量图形，基于 XML 的标记语言，是基于文本由 W3C 自 1999 年起开始开发的开放网络标准
+
+* SVG 能够优雅而简洁地渲染不同大小的图形
+* SVG 与 CSS、DOM、JavaScript 和 SMIL 等其它网络标准无缝衔接
+* SVG 可以被搜索、索引、编写脚本和压缩，利于 SEO
+* SVG 可以使用任何文本编辑器和绘图软件创建和编辑
+* SVG 能被无限放大而不失真或降低质量
+* SVG 相较于同样的位图体积更小
+* SVG 可以适应样式 / 脚本，图像每个组件都是可以通过 CSS 或 JavaScript 编写样式的元素
+
+## SVG 对比光栅图形的优缺点是什么 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+SVG 对比光栅图形的优点：
+
+* SVG 能够优雅而简洁地渲染不同大小的图形
+
+* SVG 与 CSS、DOM、JavaScript 和 SMIL 等其他网络标准无缝衔接
+
+* SVG 可以被搜索、索引、编写脚本和压缩，利于 SEO
+
+* SVG 可以使用任何文本编辑器创建和编辑
+
+* SVG 能被无限放大而不失真或降低质量
+
+* SVG 相较于同样的位图体积更小
+
+* SVG 可以适应样式 / 脚本，图像每个组件都是可以通过 CSS 或 JavaScript 编写样式的元素
+* SVG 对比光栅图形的缺点：
+
+*  SVG 容易变得复杂，文件大小会增加，复杂 SVG 会在浏览器中，会占用很长的处理时间
+
+* SVG 可能比栅格图像更难创建，具体取决于您尝试创建哪种图像
+
+* SVG 不被旧版浏览器（IE8 及以下浏览器）支持
+* 由于上述原因，光栅图形更适合照片那样复杂精密的图像
+
+## 如何在 HTML 中引入 SVG？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+（1）方式一：使用 `<img>` 标签或设置 `background: url()` 或 `background-image: url()` 属性
+
+设置 `<img>` 的 `src` 属性嵌入 SVG
+
+优点：
+
+* 快速、熟悉的图像语法与 `alt` 属性中提供的内置文本等效
+
+* 可以通过在 `<a>` 元素嵌套 `<img>` 使图像轻松成为超链接
+缺点：
+
+* 无法使用 JavaScript 操作图像
+
+* 使用 CSS 控制 SVG 内容，必须在 SVG 代码中包含内联 CSS 样式
+    * 从 SVG 文件调用的外部样式表不起作用
+
+* 不能使用 CSS 伪类来重设图像样式（ 如 :focus）
+（2）方式二：使用 `<svg>` 标签
+
+* 在文本编辑器中打开 SVG 文件，复制 SVG 代码，并将其粘贴到 HTML 文档中
+
+优点：
+
+* SVG 内联减少 HTTP 请求，可以减少加载时间
+
+* SVG 可以分配 class 和 id，并使用 CSS 修改样式。无论是在 SVG 中，还是 HTML 文档中的 CSS 样式规则。可以使用任何 SVG 外观属性作为 CSS 属性
+
+* SVG 内联是唯一让你在 SVG 图像上使用 CSS 交互（ 如：`:focus` ）和 CSS 动画的方法
+
+* SVG 可以包在 `<a>` 元素中，使其成为超链接
+缺点：
+
+* SVG 只适用于在一个地方使用，多次使用会导致资源密集型维护
+
+* SVG 会增加 HTML 文件的大小
+
+* SVG 内联后，不能像普通图片一样被缓存
+
+* SVG 的 `<foreignObject>` 元素中包含回退，但支持 SVG 浏览器仍然会下载任何后备图像。需要考虑支持过时的浏览器，增加额外开销是否真的值得
+* （3）方式三：使用 `<iframe>` 标签嵌入 SVG
+
+不推荐，缺点：
+
+* `<iframe>` 支持回退机制
+    * 切换 `<iframe>` 的 `src` 后，点浏览器后退按钮，`<iframe>` 回退，主页面不会回退
+* 同源策略
+    * 除非 SVG 和您当前的网页具有相同的 `origin`
+    * 否则不能在主页面上使用 JavaScript 来操纵 SVG
+
+## 为什么要使用响应式图片 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+使用响应式图片的原因有二：
+
+* 美术设计问题（art direction problem）
+    * 窄屏幕，显示一幅图片包含重要细节的裁剪版本
+    * 宽屏幕，裁剪后的图片会被放大，不会增加细节
+
+* 分辨率切换问题（resolution switching problem）
+    * 窄屏幕，没有必要在网页上嵌入大图片，浪费带宽
+    * 宽屏幕，如果只能在网页上嵌入小图片，有颗粒感
+    * 矢量图都能够解决以上两个问题：
+
+* 适合简单图形、图案和界面元素
+
+* 大量细节照片，矢量图更加复杂
+* 所以，需要提供响应式图片技术，让浏览器提供多个图像文件解决问题：
+
+* 使用相同显示效果的图片，但包含多个不同的分辨率，切换不同分辨率图片
+
+* 使用不同显示效果的图片，用来适应不同的空间分配，裁剪图片的不同部分
+
+## 如何创建响应式的图片 ？
+##### 难度：★ ★ ★ ★ ☆  面试高频指数：★ ★ ★ ☆ ☆
+
+* 对于装饰性图片可以使用 CSS 创建响应式图片
+    * `image-set` 支持声明一组图像的地址，分辨率和类型 `type` 例如
+```HTML
+background-image: image-set("1x.png" 1x, "2x.png" 2x, "3x.png" 3x)
+```
+
+* `media queries` 支持媒体查询
+
+```HTML
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 264dpi) {
+  /* 高分辨率下,如 iPad 2 的背景图 */
+  background-image: url("3x.png")
+}
+```
+* 对于非装饰性图片，可以使用 HTML 标签创建响应式图片
+    * 添加 `<meta>` 标签，强制浏览器，特别是手机浏览器以设备宽度来加载网页
+```HTML
+<meta name="viewport" content="width=device-width">
+```
+* 分辨率切换：不同的尺寸
+    * 设置 `srcset` 属性，声明浏览器允许的图像集和每个图像的大小
+        * 格式：文件名 + 半角空格 + 图像自身宽度（以像素为单位，写作 `w` ）
+        * 多张图像用英文半角逗号 , 分隔
+    * 设置 `sizes` 属性，声明的设定媒体条件为真时最佳尺寸图像
+        * 格式：媒体查询条件 + 半角空格 + 图像填充槽的宽度
+        * 多个媒体查询条件用英文半角逗号 , 分隔
+        * 槽的宽度支持固定值 `px` `em` 或者相对于视口的长度 `vw` 不支持百分比
+        * 最后一个槽的宽度不设置媒体查询条件，当没有任何一个媒体条件为真时生效
+        * 浏览器如何匹配响应式图片
+            * 查询设备宽度
+            * 检查 `sizes` 列表中媒体查询条件
+                * 找到第一个为真的条件对应槽的宽度
+                * 找到没有条件为真时对应槽的宽度
+            * 加载 `srcset` 列表中引用的最接近槽的宽度的图像
+                * Chrome 总是优先加载已缓存的图像
+    * 分辨率切换：相同的尺寸，不同的分辨率
+        * 书写 CSS 属性，声明图像的显示宽度 `width`
+        * 设置 `srcset` 属性，格式：文件名 + 半角空格 + 像素密度描述符（ `x` 符号）
+        * 根据当前设备的像素密度加载图像
+        美术设计：不同内容的图像
+        * 使用 `<pictrue>` 标签
+            * 包裹 `<img>` 标签作为默认值
+            * 包裹多个 `<source>` 标签
+                * 设置 `<media>` 属性，声明媒体查询条件
+                * 设置 `srcset` 属性，声明条件为真时显示图片。可以设置多张不同分辨率图像
+                * 可选设置 `sizes` 属性，声明的设定媒体条件为真时最佳尺寸图像
+    * 美术设计：不同格式的图像，优先使用现代图像格式，并兼容老浏览器
+        * 使用 `<picture>` 标签
+            * 包裹 `<img>` 标签作为默认值
+            * 设置 `type` 属性，声明文件类型（MIME Type）
+            * 设置 `srcset` 属性，声明条件为真时显示图片。可以设置多张不同分辨率图像
+            * 可选设置 `sizes` 属性，声明的设定媒体条件为真时最佳尺寸图像
+
+## 为什么不能使用 JavaScirpt 来实现响应式图片 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ★ ★ ☆
+
+图片会在主解析器加载和解析 JavaScript 之前预加载，用于加快页面加载速度
+
+* 当用 JavaScript 检测可视窗口的宽度，想要改变图片时，原来 `<img>` 标签中的 src 引用的图片已经被加载，从而产生了重复加载违背了响应式图像的理念
+* 使用 JavaScript 较难判断当前浏览器支持的图片类型，实现响应式加载图片类型
+* 使用 HTML 的响应式图片属性
+    * 可以让浏览器自动选择最合适的图片预加载，无需等待 CSS 和 JavaScript 加载和解析
+    * 开启缓存的场景下，优先返回满足条件已被缓存的图片，进而节省流量，提高加载速度
+
+## 如何调试响应式 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+使用浏览器的开发者工具可以调试响应式
+
+* 通过 Firefox 的 Tools > Web Developer > Responsive Design View 或 Chrome 的 DevToos 的 Toggle device toolbar 模拟不同设备，或者人工调整屏幕宽度
+* 判断响应式图片配置是否已经生效
+    * 相同图片，通过 DOM 检查工具，查看当前加载的图片宽度
+    * 通过 Network 面板，查看当前下载的图片地址
+* Chrome 浏览器需要在 Network 面板下勾选 Disable cache，禁用缓存
+* 避免 Chrome 优先选择缓存图片，而不是响应式地适配图片
+***
+# 多媒体及嵌入
+
+## 如何插入音频 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+IE 浏览器，早期用非标准属性 `<bgsound>` 设置网页背景音乐，只支持 `.wav` `.au` 和 `.mid`
+
+Flash 支持`.mp3` `.flv` `.f4v` `rtmp` 和 `m3u8`，用于 Web 播放音视频
+
+HTML5 使用`<audio>` 元素用于在文档中嵌入音频内容
+
+* 可以使用内嵌 `<source>` 提供不同播放源
+    * 设置 `type`属性，避免消耗大量时间和资源让浏览器尝试加载
+* 浏览器会使用第一个支持的格式
+
+## 如何插入视频 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+Flash 支持`.mp3` `.flv` `.f4v` `rtmp` 和 `m3u8`，用于 `Web` 播放音视频
+
+HTML5 使用 `<video>` 元素用于在文档中嵌入视频内容
+
+* 可以使用内嵌 `<source>` 提供不同播放源
+    * 设置 `type`属性，避免消耗大量时间和资源让浏览器尝试加载
+* 浏览器会使用第一个支持的格式
+* `<video>` 标签支持 `width / height` 属性
+* `<video>` 标签支持 `poster` 属性设置缩略图
+
+## 有哪些标签可以嵌入外部内容 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+可以嵌入外部内容的标签包括：
+
+* `<link>` 外部 CSS，Favicon.ico
+* `<script>` 外部 JavaScript
+* `<img>` 外部图像
+* `<audio>` `<bgsound>` 外部音频
+* `<video>` 外部视频
+* `<iframe>` 嵌入外部网页
+* `<embed>` 嵌入插件
+* `<object>` 嵌入插件
+    可以嵌入外部内容的标签，通常被用来解跨域问题
+
+## 兼容性较好的视频、音频格式分别是 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+* 视频
+    * `MPEG-4` 即 `MP4`容器格式
+        * `MP4` 支持流媒体
+        * `MP4`支持 MPEG-2、MPEG-4、HEVC、H.265、H.264 和 H.263 视频编码
+        * `MP4` 支持 AAC、MPEG-1、Layers Ⅰ、Ⅱ、Ⅲ 和 AC-3 等音频编码
+        * 所有现代浏览器、移动端浏览器和 Internet Explorer 都支持
+    * `WebM`
+        * `WebM` 支持流媒体
+        * `WebM` 支持 VP8 和 VP9 视频编码
+        * `WebM` 支持开源的 Vorbis 和 Opus 音频
+        * 所有现代浏览器都支持
+* 音频
+    * `MPEG Audio Layer 3` 即 `MP3`
+        * `MP3` 利用 MPEG Audio Layer 3 技术，将音乐以 1:10 至 1:12 压缩率压缩成小文件
+        * 绝大多数浏览器，包括 IE9 +，除老版本的 Firefox、Opera 外都支持
+
+## 如何使媒体文件支持不同平台，不同设备的浏览器 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+使用 `<source>` 标签
+
+* 用于为图片 `<picture>` 音频 `<audio>` 和视频 `<video>` 指定多个媒体资源
+* 设置 `type` 属性声明资源的 MIME 类型，增加资源的备选类型
+    * 图像，优先现代图片格式，如 `webp` 或 `avif` 使用 `jpg` 或 `png`托底
+    * 视频，优先 `webm` 使用 `mp4` 托底
+    * 音频，优先 `mp3` 使用 `ogg` 兼容老版本 Firefox，使用 `wav` 兼容老版本 Opera
+* 使用 替换内容，如图片的 `<img>` 标签， `<audio>` 和 `<video>` 嵌入 Flash 兼容老浏览器
+
+## 如何为视频插入字幕 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+使用 `<track>` 标签
+
+* 设置 `src` 属性，声明视频字幕的地址
+    * 引用 `WebVTT` 格式 或者 `TTML` 时序文本标记语言格式的字幕地址
+* 设置 `kind` 属性为 `subtitles`。`subtitles` 是默认值，这步可省略
+* 设置 `srclang` 属性，从合法 BCP 47 语言标签中选择一种声明字幕语言
+* 设置 `label` 属性，用户可读可选择语种
+
+## 如何为视频设置缩略图 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+设置 `<video>` 的 `poster` 属性
+
+* 提供视频的缩略图地址
+* 缩略图将在视频播放或跳帧前显示
+* 未指定缩略图，在第一帧可用前，什么都不显示
+
+## 为什么设置 `autoplay` 的视频无法自动播放 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+* 移动端普遍按流量付费，所以移动端浏览器在用户首次打开视频时
+    * 忽略 `autoplay`的自动播放属性
+    * 弹出确认框，询问用户是否使用流量播放视频
+* 自动播放策略限制
+    * 始终允许静音视频自动播放
+    * 以下情况允许自动播放声音
+        * 用户与域进行了交互（单击、点击等）
+        * 桌面上，用户的媒体参与指数阈值已被超过，即用户之前曾播放过有声视频
+        * 用户已将站点添加到其移动设备主屏幕或在桌面设备上安装了 PWA
+    * 上层框架可以将自动播放权限委托给它们的 iframe，允许自动播放声音
+* 策略影响版本
+    * 音视频元素从 Chrome 66 起受自动播放策略限制
+    * 网络音频从 Chrome 71 起受自动播放策略限制
+        * 如果 `AudioContext` 在文档接收到用户手势之前创建，`AudioContext.state` 为 `suspended`，需在用户手势之后调用 `resume()` 开始播放
+        * 用户主动点击节点，调用 `start()` 开始播放
+
+***
+# 表格
+## 什么是表格 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+表格，又称为表，既是一种可视化交流模式，又是一种组织整理数据的手段
+
+* HTML 表格是由行和列组成的数据集，用于表示结构化数据
+* HTML 表格有三种实现方式
+    * 基于 table HTML 的 table 元素表示表格数据，即通过二维数据表表示的信息
+        * 表格 table 早期多用于网页的表格布局，将网页或图片通过线框图表示成小部分
+            * 表格 table 将其组合显示，在资源加载速度是主要瓶颈时，用于提高加载体验
+                表格 `table` 早期比 CSS 更容易在不同浏览器及版本中，保持稳定的兼容性
+            表格 `table` 本身宽高自适应内容的特性，内容更改更容易引发重排，渲染性能一般。已较少用于布局，流式布局、弹性布局、网格布局、分栏布局都是其替代方案
+            更高的带宽，压缩比更高的图片格式，如 `webp` `avif` 以及 `http2` 的应用，让通过表格将大图切割成小图的方案也成为历史
+            表格 `table` 目前专注应用于数据格式化的场景，用于展示便于阅读和标记及机器抓取和识别的结构化数据，利于 SEO
+        基于 `<div>` 或其它 DOM 元素 + CSS 实现
+            大量数据的场景下，配合虚拟渲染，能提高渲染性能
+            非主动标记的情况下，搜索引擎难以将其识别为结构化数据，不利于 SEO
+            读屏软件不兼容时，朗读结构化数据的体验较差
+        基于 `canvas` 实现
+            `canvas` 渲染效率比 DOM 高
+                `canvas` 渲染无需存额外信息，立即模式下直接发绘图命令到 GPU，由显卡渲染
+                DOM 渲染需存额外信息，过程包括解析、计算、重排、重绘和合成，更容易控制和拓展
+            `canvas` 渲染表格多用于在线文档等基于表格的应用
+
+## 为什么要使用 CSS 而不是 `table` 表格布局 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+使用表格，而不是 CSS 布局的理由如下
+
+* 渲染性能
+    * table 默认的布局算法为 `table-layout: auto`
+        * 表格的列宽度由内容决定
+            * 内容的改动很容易引发整个表格的重排
+            * 所有内容加载完成，解析和渲染表格
+        * 表格的列宽度由首行内容决定，更改布局算法为 `table-layout: fixed`
+            * 表格的列宽度由首行的单元格决定
+            * 首行数据被下载后，解析和渲染表格，后续行的列宽不再自适应内容
+    * 虽然新布局算法加速了表格渲染，但对比流式布局、弹性布局、分栏布局和网格布局的性能仍然较低，特别是数据量较大或变动频繁时，`table` 可在优化后用于结构化数据，但仍然不适合用来布局
+* 复杂结构
+    * table 布局，标签的层级至少有三层，复杂的标签结构
+        * 降低可读性，不容易编写、维护和调试
+        * 降低可访问性，可能需要更多跳转，使用屏幕阅读器的用户才能找到想要的内容
+* 自适应
+    * 表格的列宽度由内容或首行内容决定
+    * 设置宽度为 100% 的表格，需要额外设置维护布局
+* 响应式
+    * 表格的列数为无法只依靠 HTML + CSS 自动调整
+        * 变通的方法是根据媒体查询，显示或隐藏列
+    * 浮动、弹性和网格布局，可以更轻松根据屏幕，调整显示列数
+
+## 常用的表格标签有什么 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+`<table>` 表示表格数据，即通过二维数据表表示的信息
+
+`<caption>` 表格标题
+
+`<colgroup>` 表格列的分组
+
+`<col>` 将多少列分为一组
+
+`<thead>` 包含表格列头的行
+
+`<tr>` 行
+
+`<th>` 表头单元格
+
+`<tbody>` 包含表格内容的行
+
+`<td>` 单元格
+
+`<tfoot>` 包含表格各列汇总行
+
+## 如何让表格实现跨行或跨列显示 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+设置 `colspan` 属性，表示每单元格跨列的数量
+
+设置 `rowspan` 属性，表示每单元格跨行的数量
+
+
+## 如何为表格中的列设置相同的样式 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+  <img src="./public/img/img3.bmp" alt="">
+
+如图所示，实现第 0 列和第 4 列粉色，中间 3 列蓝色
+
+HTML：
+```html
+<table>
+  <thead>
+    <tr>
+      <th>H1</th>
+      <th>H2</th>
+      <th>H3</th>
+      <th>H4</th>
+      <th>H5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+```
+CSS：
+
+* 方案一：使用伪类选择器，nth-of-type 或 nth-child
+
+```css
+table {
+  width: 100%;
+  line-height: 3;
+  text-align: center;
+  color: white;
+}
+th:nth-child(1) ~ th,
+td:nth-child(1) ~ td {
+  background-color: skyblue;
+}
+tr th:nth-child(4n + 1),
+tr td:nth-child(4n + 1) { /* 使用 tr 标签增加层次进而增加优先级 */ 
+  background-color: pink;
+}
+```
+* 方案二：使用表格列分组标签
+
+HTML：在 <table> 和首行 <tr> 间增加列分组标签 <colgroup>
+
+```html
+<table>
+  <colgroup>
+    <col></col>
+    <col span="3"></col>
+    <col></col>
+  </colgroup>
+</table>
+```
+
+CSS：
+
+```css
+table {
+  width: 100%;
+  line-height: 3;
+  text-align: center;
+  color: white;
+}
+col {
+  background-color: pink;
+}
+col:nth-child(2) {
+  background-color: skyblue;
+}
+```
+
+## 如何为表格增加标题 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+使用 `<caption>` 标签
+
+* 将 `<caption>` 标签放入 `<table>` 中
+* 自动出现在表格头部
+* 通过 CSS 定义其样式
+    例如
+
+HTML：
+```HTML
+<table>
+  <caption>表格标题</caption>
+  <thead>
+    <tr><th>1</th><th>2</th><th>3</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+  </tbody>
+</table>
+```
+CSS：
+```CSS
+table {
+  width: 100%;
+  color: white;
+  line-height: 3;
+  text-align: center;
+}
+caption {
+  background-color:turquoise;
+}
+th, td {
+  background-color: pink;
+}
+th:nth-child(2), td:nth-child(2) {
+  background-color:skyblue;
+}
+```
+效果：
+  <img src="./public/img/img2.bmp" alt="">
+
+## 表格结构标签有哪些，为什么要使用 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+表格结构标签有 `<thead>` `<tfoot>` `<tbody>` 分别对应：
+
+表格的表头（首行）、页脚（最后一行，对前面所有行的总结）和正文部分
+
+表格结构标签的作用：
+
+* 定义表格更加结构化，便于维护、数据标记和识别
+* 便于布局，表头（首行）和页脚（最后一行）可以独立于正文布局，利于大数据展示和打印
+* 便于应用样式，可以使用 CSS 标签选择器，单独对表头、页脚和正文设置不同的样式
+
+## 如何定义表格的列标题和行标题 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+设置表头单元格 `<th>` 的 `scope` 属性
+
+* `scope="col"` 列标题
+* `scope="colgroup"` 跨列标题
+* `scope="row"` 行标题
+* `scope="rowgroup"` 跨行标题
+    例如
+
+HTML：
+```HTML
+<table>
+  <caption>表格标题</caption>
+  <thead>
+    <tr><th scope="col">列标题 1</th><th colspan="2" scope="colgroup">跨列标题 2 - 3</th></tr>
+    <tr><th scope="col">列标题 1</th><th scope="col">列标题 2</th><th scope="col">列标题 3</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">行标题</th><td>2</td><td>3</td></tr>
+    <tr><th rowspan="2" scope="rowgroup">跨行标题</th><td>2</td><td>3</td></tr>
+    <tr><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+  </tbody>
+</table>
+```
+CSS：
+```CSS
+table {
+  width: 100%;
+  color: white;
+  line-height: 3;
+  text-align: center;
+}
+caption {
+  background-color:turquoise;
+}
+th, td {
+  background-color: pink;
+}
+th:nth-child(2), td:nth-last-child(2) {
+  background-color:skyblue;
+}
+```
+效果：
+  <img src="./public/img/img.bmp" alt="">
+
+## 如何精确设置表格标题和单元格之间的联系 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+设置表头单元格 `<th>` 的 `id` 属性，添加唯一 `id`
+
+设置单元格 `<td>` 的 `headers` 属性，包含从属于标题的表头单元格的 `id` 空格分隔
+
+例如
+
+HTML：
+```html
+<table>
+  <caption>表格标题</caption>
+  <thead>
+    <tr><th id="colgroup_1">列标题 1</th><th colspan="2" id="colgroup_2">跨列标题 2 - 3</th></tr>
+    <tr><th id="col_1">列标题 1</th><th id="col_2">列标题 2</th><th id="col_3">列标题 3</th></tr>
+  </thead>
+  <tbody>
+    <tr><th id="row_1">行标题</th><td headers="colgroup_2 col_2 row_1">2</td><td headers="colgroup_2 col_3 row_1">3</td></tr>
+    <tr><th rowspan="2" id="row_2">跨行标题</th><td headers="colgroup_2 col_2 row_2">2</td><td headers="colgroup_2 col_3 row_2">3</td></tr>
+    <tr><td headers="colgroup_2 col_2 row_2">2</td><td headers="colgroup_2 col_3 row_2">3</td></tr>
+    <tr><td headers="colgroup_1 col_1">1</td><td headers="colgroup_2 col_2">2</td><td headers="colgroup_2 col_3">3</td></tr>
+    <tr><td headers="colgroup_1 col_1">1</td><td headers="colgroup_2 col_2">2</td><td headers="colgroup_2 col_3">3</td></tr>
+  </tbody>
+</table>
+```
+CSS：
+```css
+table {
+  width: 100%;
+  color: white;
+  line-height: 3;
+  text-align: center;
+}
+caption {
+  background-color:turquoise;
+}
+th, td {
+  background-color: pink;
+}
+th:nth-child(2), td:nth-last-child(2) {
+  background-color:skyblue;
+}
+```
+效果：
+  <img src="./public/img/img4.bmp" alt="">
+***
+
+# 表单
+## 什么是 HTML 表单？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+HTML 表单负责数据采集，收集的数据将被发送到 Web 服务器，由三个基本组成部分
+
+* 表单标签
+    * 处理表单数据所需 URL
+    * 提交到服务器的方法和编码
+* 表单域
+    * 由一个或多个表单部件组成，例如输入框、多行文本框、单选、复选、下拉选择或文件上传等表单部件
+    * 用户填写信息的区域
+* 表单按钮
+    * 提交按钮、重置按钮或一般按钮
+    * 用于发送数据或重置用户输入的内容
+
+## 如何设置 `input` 和 `textarea` 的初始值 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+`input` 标签使用 `value` 属性设置初始值
+
+`textarea` 标签使用替换文本设置初始值
+
+## `button` 有哪几种类型 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+`button` 有三种类型 `type`
+
+* `type` 为 `submit` 时，以表单标签声明的方法和编码，提交表单数据到 `<from>` 的 `action` 属性定义的 URL
+* `type` 为 `reset` 时，将表单域中的表单部件重新设置为默认值
+* `type` 为 `button` 时，适用于 JavaScript 构建定制按钮
+
+## 使用 `input` 和 `button` 生成按钮有什么不同 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+`<input>` 生成按钮
+
+* `value` 同时设置显示值和提交值，只支持纯文本
+
+* `type` 支持 `button` `submit` `reset` 等三种基本按钮类型
+    * 还支持单选按钮 `raido` 复选按钮 `checkbox` 颜色选择按钮 `color` 带图像的提交按钮 `image` 文件选择按钮 `file`
+    * 默认类型为 `text`
+
+* 除按钮位置，大小不同外，兼容性好，在现代浏览器，包括 IE 浏览器行为一致。
+* `<button>` 生成按钮
+
+* `value` 设置提交值，只支持纯文本
+
+* `<button>` 与 `</button>` 间的替换内容支持 HTML，也支持插入伪元素
+
+* `type` 支持 `button` `submit` `reset` 等三种基本按钮类型
+    * 还支持 `menu` 类型，用于打开 `<menu>` 声明的列表菜单
+    * 默认类型为 `submit` , IE 的默认类型为 `button`
+
+* 除样式略有不同，兼容性好
+    * IE 6 提交存在 Bug：提交表单所有按钮
+    * IE 7 提交存在 Bug：提交的是`<button>` 与 `</button>` 间的替换文本，而不是 `value`
+    * IE 8 无以上问题，兼容 IE 浏览器时，请优先使用 `input` 生成按钮
+
+## 哪些表单属性与向 web 服务器发送表单数据有关系 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ★ ☆ ☆
+
+`<form>` 表单的以下属性与 web 服务器发送表单数据有关系，包含属性
+
+* `action` 属性，设置表单提交 URL，能被提交按钮的 `formaction` 属性覆盖
+    * `<button type="submit"></button>` 提交按钮
+    * `<input type="submit"></input>` 提交按钮
+    * `<input type="image"></input> `图片类型的提交按钮
+
+* `method` 属性，设置 HTTP 方式提交表单的方法
+    * post 表单数据包含在请求体内发送给服务器
+    * get 表单数据以查询字符串的方式拼接在 UR 中，用 ? 作为分隔符
+    * dialog 表单在 `<dialog>` 中，提交时关闭对话框
+
+* `enctype` 属性，设置表单提交服务器 MIME 类型，能被提交按钮 `formenctype` 属性覆盖
+    * `application/x-www-form-urlencoded` 未指定属性时的默认值
+    * `multipart/form-data` 表单域中包含文件上传部件时使用
+    * `text/plain` 用于 HTML5 调试
+        表单部件的以下属性与 web 服务器发送表单数据有关系，包含属性
+
+* `name` 属性，表单控件的名称，提交的键值对的键名
+
+* `value` 属性，表单控件的值，提交的键值对的键值
+
+## 表单元素一定要用 `form` 包裹吗，不包裹会怎样 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+表单元素不一定要用 `form` 包裹
+
+* HTML5 支持表单元素的 `form` 属性
+    * 显式地将不在表单中的元素与表单绑定
+    * IE 浏览器及老版本的现代浏览器不支持该属性
+* 不包裹，也没有设置 `form` 属性
+    * 表单元素除默认行为外，不会有与表单定义的验证或与 Web 服务器的交互行为
+    * 需要使用 JavaScript 定义它们的行为
+
+## 可以在一个表单嵌套另一个表单吗 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+不可以在一个表单嵌套另一个表单
+
+* 根据 w3c 规范草案：
+* `form` 元素的 Content model 允许包含 流式内容，但不允许出现 `form`，引用 原文 ：
+
+    >Content model:
+    Flow content, but with no form element descendants.
+
+* 如果在表单中嵌套另一个表单
+    不同浏览器的表现行为不一致，如有的浏览器会截断第一个嵌套表单之后的数据不提交
+
+## 如何分组表单元素 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+`<fieledset>` 用于表单小部件分组
+
+* 标题由其中第一个 `<legend>` 元素决定
+* 可设置 `form` 属性，用于将其中的一组表单元素与指定表单关联
+* 可设置 `disabled` 属性，用于禁用其中不在 `<legend>` 的表单元素
+
+## 如何将标签连接到表单元素，连接后有什么好处 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+将 `<label>` 与表单元素连接（关联）的方法：
+
+* 设置 `for` 属性，指向同一个文档中可关联标签的元素的 `id`
+
+* 将表单元素嵌套在 `<label>` 元素
+    * 部分屏幕阅读器不支持嵌套表示的关联关系
+连接后的好处：
+
+* 屏幕阅读器会将标签中的文字与表单元素联系在一起朗读
+    * 可以读出表单元素需要填写的内容
+    * 可以读出该表单元素是否必填
+
+* 标签被点击时，关联的表单元素自动获取焦点
+
+## 如何构建一个姓名为必填项的表单，满足语义和可访问性的要求 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+满足语义和可访问性的要求，需要满足两个条件：
+
+* 将对表单元素的说明放在同一个标签中
+    * 便于屏幕阅读器关联后一起朗读
+* 避免使用嵌套，而设置 `for` 属性表达标签和表单元素的关联关系
+    * 语义、结构更清晰
+    * 避免部分屏幕阅读器不支持嵌套
+```HTML
+<label for="name">
+  姓名: 
+  <abbr title="required">*</abbr>
+</label>
+<input id="name" type="text" name="name">
+```
+## 如何禁用表单元素 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+给表单元素添加 `disabled` 属性
+
+* 该属性是布尔属性，属性名和属性值相同，只要添加即声明禁用，没有即不禁用
+* 禁用一组表单元素
+    * 将一组表单元素放入 `<fieldset>` 标签中
+    * 给 `<fieldset>` 添加 `disabled` 属性
+
+## 如何让表单元素自动对焦 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+给表单元素添加 `autofocus` 属性
+
+* 该属性是布尔属性，属性名和属性值相同，只要添加即声明自动对焦，没有即不自动对焦
+* 文档中只有一个表单元素可以设置 `autofocus` 属性
+    * 多个表单元素设置 `autofocus` 属性，只有第一个表单元素会自动对焦
+
+## 如何将表单元素与表单关联 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+将表单元素与表单关联的方法有：
+
+* 将表单元素放入表单标签 `<form>` 中
+* 设置表单元素 `form` 属性，指向 `<form>` 的表单 `id`
+    * 除 IE 外，现代浏览器都支持该属性
+* 通过 JavaScript 设置表单元素被用户操作时，调用 `<form>` 的 `submit` 方法
+
+## 如何允许用户一次输入多个电子邮件地址，逗号分隔 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+使用 `email` 类型 `<input>` 标签
+
+* 设置 `type` 为 `email` 声明只允许电子邮件地址
+* 添加布尔属性 `multiple` 声明允许多个电子邮件地址，用 `,` + 半角空格（可选）分隔
+```HTML
+<form>
+  <input type="email" multiple>
+  <input type="submit">
+</form>
+```
+校验失败后提示：
+<img src = "public\img\sd9orai7.bmp" alt ="">
+使用 `text` 类型 `<input>` 标签
+
+* 设置 `type` 为 `text` 声明允许任何文本
+* 设置 `pattern` 属性填入正则表达式
+    * 匹配多个电子邮件地址，用 , + 半角空格（可选）分隔
+```HTML
+<form>
+  <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+)+([,]\s*([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+))*$">
+  <input type="submit">
+</form>
+```
+<img src = "public\img\vtm1zwam.bmp" alt ="">
+
+## 哪些类型的输入框默认会对用户输入的内容进行前端校验 ？
+##### 难度：★ ★ ★ ☆ ☆  面试高频指数：★ ★ ☆ ☆ ☆
+
+日期时间类 `date` `month` `week` `datetime-local` `time`
+
+* 可设置 `required` 必填
+
+* 默认情况下不对输入的值进行校验
+
+* 输入界面会确保用户无法输入任何不是日期时间或不在范围的值
+    * 精确到时间并设置 `min` 和 `max` 时，超出范围的时间可能被输入并会被校验
+<img src="public\img\fwns4qw2.bmp" alt="">
+
+* 考虑兼容性时，需要手动设置 `pattern` 填入正则表达式，辅助验证
+
+颜色选择类 `color`
+
+* 支持拾色器的浏览器，通过拾色器确保用户无法输入非颜色值
+
+* 不支持拾色器的浏览器，会校验用户输入是否可以转换为 7 个字符，即十六进制 RGB 形式
+数字输入类 `number`
+
+* 可设置 `required` 必填
+
+* 只允许输入数字和空（ `required` 未设置）
+
+* 可设置 `min` 和 `max` 设置范围
+
+* 可设置 `step` 步进长度，值必须为该长度的倍数（ `min` 和 `max` 至少设置一个）
+<img src="public\img\vp3vfomu.bmp" alt="">
+
+电话号码类 tel
+
+* 可设置 `required` 必填
+
+* 可设置 `minlength` 和 `maxlength` 长度范围
+    * 低于最小长度值，提交时校验弹出提示
+    * 高于最大长度值，无法继续输入
+
+* 使用动态键盘时，唤起电话数字键盘，但不会校验用户输入内容
+    * 需要根据国家或地区的电话号码规则，手动设置 `pattern`
+    * 搜索查询类 search 文本输入类 `text` 密码输入类 `password`
+
+* 可设置 `required` 必填
+
+* 可设置 `minlength` 和 `maxlength` 长度范围
+    * 低于最小长度值，提交时校验弹出提示
+    * 高于最大长度值，无法继续输入
+
+文件选择类 `file`
+
+* 可设置 `required` 必填
+
+* 可设置 `multiple` 支持多选
+
+* 可设置 `accpet` 属性
+    * 支持半角逗号分隔的拓展名或 `MineType` 类型，过滤可选择的文件类型
+    * 邮箱输入类 `email`
+
+* 可设置 `required` 必填
+
+* 可设置 `minlength` 和 `maxlength `长度范围
+    * 低于最小长度值，提交时校验弹出提示
+    * 高于最大长度值，无法继续输入
+
+* 可设置 `multiple` 支持半角逗号分隔的多个邮件地址
+
+* 提交时校验用户输入内容是否为一个或多个（ `multiple` 设置时）邮件地址
+<img src="public\img\92nlbz2f.bmp" alt = "">
+
+网址输入类 `url`
+
+* 可设置 `required` 必填
+* 可设置 `minlength` 和 `maxlength` 长度范围
+    * 低于最小长度值，提交时校验弹出提示
+    * 高于最大长度值，无法继续输入
+* 可设置 `multiple` 支持半角逗号分隔的多个网址
+* 提交时校验用户输入内容是否为一个或多个（ `multiple` 设置时）网址
+<img src = "public\img\c1dn3bse.bmp" alt="">
+
+## 多行文本框和单行文本框的区别是什么 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+* 可替换元素
+    * `<textarea>` 是可替换元素，规范中为明确列举该元素，但元素拥有固定的宽度和高度
+    * `<input>` 是规范中列举的可替换元素，拥有固定的宽度和高度
+        * 通常也认为类型 `type` 为 `image` 时，该元素为可替换元素，其它类型不是
+* 自闭合标签
+    * `<textarea>` 不是自闭合标签，开始标签和结束标签不能省略
+    * `<input>` 是自闭合标签
+    值
+    * `<textarea>` 的值在开始标签和结束标签间中
+    * `<input>` 的值通过 `value` 设置
+* 属性
+    * `<taxtarea>` 支持私有属性
+        * `rows` 和 `cols` 用于设置高度和宽度
+        * `wrap` 指定文本的换行方式
+        `<input>` 支持私有属性
+        * `type` 用来切换不同类型的输入控件
+* 换行符 `\n` 和回车符 `\r`
+    * `<textarea>` 的值和 `placeholder` 支持 `&#10`; 换行符， `&#13`; 回车符
+    * `<input>` 的 `value` 和 `placeholder` 不支持 `&#10`; 换行符，` &#13`; 回车符
+    * 换行代码：
+```HTML
+<p>多行文本框</p>
+<textarea placeholder="第一行&#10;&#13;第二行" rows="6">第一行&#10;&#13;第二行</textarea>
+<p>单行文本框</p>
+<input type="text" value="第一行&#10;&#13;第二行" />
+```
+换行效果：
+<img src="public\img\yomy907g.bmp">
+
+## HTML 下拉框有哪两种实现方式 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+使用 `<select>` 标签
+
+* 包裹 `<option>` 标签，每一行是一项
+    代码
+```HTML
+<select>
+  <option value="选项 1">选项 1</option>
+  <option value="选项 2">选项 2</option>
+  <option value="选项 3">选项 3</option>
+</select>
+```
+效果
+<img src="public\img\fqg2txg1.bmp">
+
+使用 `<input>` 标签
+
+* 使用 `<datalist>` 标签
+    * 包裹 `<option>` 标签，每一行是一项
+* 设置 `list` 属性，关联 `<datalist>`
+    代码
+```HTML
+<input type="text" list="select" />
+<datalist id="select">
+  <option value="选项 1">选项 1</option>
+  <option value="选项 2">选项 2</option>
+  <option value="选项 3">选项 3</option>
+</datalist>
+```
+效果
+<img src="public\img\ps1ysv2c.bmp">
+
+## 如何构建一个兼顾老版本浏览器的自动补全输入框 ？
+
+可以在 `<datalist>` 标签中嵌入 `<select>` 和 `<option>` 标签，当 `<datalist>` 不被支持时，展示下拉选择框，提供用户手动输入内容的第二选择
+```HTML
+<label for="colorInput">What is your favorite color ?</label>
+<input type="text" id="colorInput" list="colorList">
+<dataList id="colorList">
+  <label for="colorSuggestion">or pcik a color</label>
+  <select>
+    <option>Blue</option>
+    <option>Red</option>
+    <option>Orange</option>
+    <option>Green</option>
+    <option>Yellow</option>
+    <option>Pink</option>
+    <option>Purple</option>
+    <option>White</option>
+  </select>
+</dataList>
+```
+支持浏览器预览：
+
+<img src="public\img\qpii5bp9.bmp">
+不支持浏览器预览：
+<img src="public\img\pmwsr4fy.bmp">
+
+## 如何构建单选框，如何构建复选框 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+单选框
+
+1. 设置 type=radio
+
+2. 相同 name 的单选框同时只有一个能被选中
+
+3. 选中项有 checked 属性，没有一个选中项，不会发送 name 的值
+
+4. 默认 value 值为 on
+
+复选框
+
+1. 设置 type=checkbox
+
+2. 相同 name 的复选框
+    * 表单被提交后，可以获得提交的键名和键值对字符串
+    * Python 可以使用 `self.request.get('name', allow_multiple = True)` 或 `self.request.getAll('name')` 获取
+    * PHP 可以设置 `name` 值的格式为 `name[]` ，使用名称 `name` 获取数组
+
+3. 选中项有 `checked` 属性，没有一个选中项，不会发送 `name` 的值
+
+4. 默认 `value` 值为 `on`
+
+## 如何在表单中发送图片被点击时的坐标 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+使用图像按钮元素
+
+1. 设置 `type=image`
+
+* 支持与 `<img>` 元素的相同属性
+* 支持其它表单按钮的支持属性
+
+2. 使用图像按钮提交表单
+
+* 不会提交自身值
+* 会提交单击处相对于图像左上角的 `X` 和 `Y` 坐标
+    * 以查询字符串的格式跟在 URL 后
+    * `https://www.leetcode-cn . com/?pos.x=100&pos.y=200`
+
+## 支持 `min` 和 `max` 的表单组件有哪些 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+1. 数字选择器 `min` 和 `max` 分别设置最小值和最大值
+
+* type=number 的 `<input>`
+
+2. 滑块选择器 `min` 和 `max` 分别设置最小值和最大值
+
+* type=range 的 `<input>`
+
+* 日期时间选择器 `min` 和 `max` 设置开始时间和结束时间
+
+* type=datetime-local 的 `<input>`
+* type=month 的 `<input>`
+* type=time 的 `<input>`
+* type=week 的 `<input>`  
+
+4. 进度条选择器 `<progress>`<progress>
+
+* `max` 指定随时间变化而变化到最大的值
+
+5. 仪表选择器 `<meter>`<meter>
+
+* `min` 值域的最小边界值，默认为 0
+* `max` 值域的上限边界值，默认为 1
+
+## 哪种输入表单适合显示密码强度 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+1. `low` 和 `high` 将范围划分为三个部分
+
+* 较低部分：`min` 和 `low`
+* 中间部分：`low` 和 `high`
+* 较高部分：`high` 和 `max`
+
+2. `optimum` 定义 `<meter>` 元素的最优值
+
+* `optimum` 值在较低范围内，较低范围最优，中等范围一般，较高范围最坏
+* `optimum` 值在中等范围内，较低范围一般，中等范围最优，较高范围最坏
+* `optimum` 值在较高范围内，较低范围最坏，中等范围一般，较高范围最优
+
+3. `<meter>` 颜色
+
+* 最优显示为绿色
+* 平均显示为黄色
+* 最坏显示为红色
+    实现一个密码强度显示器，分别对应 弱、中等、强的密码
+```HTML
+<p>密码强度指示器</p>
+<p>弱：<meter min="0" low="33" high="66" max="100" value="30" optimum="100"></meter></p>
+<p>中等：<meter min="0" low="33" high="66" max="100" value="55" optimum="100"></meter></p>
+<p>强：<meter min="0" low="33" high="66" max="100" value="88" optimum="100"></meter></p>
+```
+效果如下所示：
+<p>密码强度指示器</p>
+<p>弱：<meter min="0" low="33" high="66" max="100" value="30" optimum="100"></meter></p>
+<p>中等：<meter min="0" low="33" high="66" max="100" value="55" optimum="100"></meter></p>
+<p>强：<meter min="0" low="33" high="66" max="100" value="88" optimum="100"></meter></p>
+
+## 使用 GET 和 POST 发送表单数据，有什么不同 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+根据 `rfc-2616` 规范，HTTP 协议中的 GET 和 POST 主要是语义上的区别
+
+在浏览器的实现及应用中，存在 GET 和 POST 的最佳实践
+
+GET 发送表单数据
+
+* 设置 `<form>` 的 `method` 属性为 `get`
+
+* 数据以查询字符串的形式被追加到 URL，参数上限受早期浏览器和 Web 服务器的限制
+    * 问号 `? `后跟查询字符串
+    * 符号` &` 分隔开的键名键值对
+
+* 默认缓存，受缓存策略控制
+
+* 可回退
+
+* 可收藏
+
+* 参数随 URL 保存在浏览器历史中
+
+* 适用于无副作用，幂等的请求
+POST 发送表单数据
+
+* 设置 `<form>` 的 `method` 属性为` post`
+
+* 数据以查询字符串的形式附加到请求体中，参数上限可能受后端脚本限制，如 PHP 通过 `max_input_vars` 限制最大输入参数上限
+
+* 包含请求行
+    * `Content-Type: application/x-ww-form-urlencoded`
+    * `Content-Length: {请求体的数据长度}`
+
+* 默认不缓存，受缓存策略控制，可声明缓存
+
+* 通常回退会触发重新提交警告，避免回放攻击
+
+* 通常不可收藏
+
+* 参数不随 URL 保存
+
+* 适用于有副作用，非幂等的请求
+
+## Form 的 enctype 属性都有哪些值，各自适合什么场景 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+`enctype` 属性通常用来提交表单的内容类型
+
+* `application/x-www-form-urlencoded` 默认值，数据转换为键值对，用于不含文件的表单提交
+* `multipart/form-data` 使用 `<input>` 标签上传文件时，必须设置此类型
+* `text/plain` 表示纯文本形式，HTML5 新增，通常用于调试
+
+## 什么是表单校验，为什么要使用表单校验 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+（1）什么是表单校验
+
+向 Web 应用输入或提交数据时，验证数据的过程就是表单校验
+
+* 正确则允许数据继续提交后端或后台服务
+* 失败则提示错误类型、原因、位置或更改建议
+
+（2）为什么要进行表单校验 ？
+
+* 确保数据格式正确：
+    * 引导用户：引导用户输入符合预期的数据
+    * 保护系统：符合设定类型、位数或具体规则，避免不正确格式数据影响程序运行
+* 信息安全
+    * 保护用户：确保用户设定密码、二次密码、安全问答够复杂，不易被暴力破解，无泄漏
+    * 减少攻击：经常与后端或后台服务的校验一起应用，减少恶意或伪造的数据提交
+
+## 表单校验都有哪些类型 ？
+##### 难度：★ ☆ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+表单校验可以分为客户端校验和服务器端校验
+
+* 客户端校验
+    * 校验时机：发生在应用端或浏览器端，表单数据被提交到服务器之前
+    * 实时性：即时反馈用户输入的校验结果
+    * 作用：确保数据格式正确，保护信息安全
+    * 方式：
+        * JavaScript：监听输入框输入、失去焦点和提交事件，验证非空（必填），使用 length 校验长度，正则校验格式等，校验通过或失败分别设置不同 class 或 style，失败时，通过禁用提交按钮，阻止 onsubmit 事件，阻止表单继续提交
+        * HTML5 内置校验：通过设置不同的 type 类型，声明 required 必填属性，minlength 和 maxlength 限制长度，min 和 max 限制数字或日期范围，设置 pattern 正则表达式校验输入内容，更改伪类类名的属性自定义校验或失败的提示，性能更好，代码更少，老版本 IE 不兼容
+        * HTML5 内置校验 + JavaScript（constraint validaton API）：检测、自定义表单元素状态和错误信息
+* 服务器端校验
+    * 校验时机：应用端或浏览器提交数据并被后端或后台服务接收之后
+    * 滞后性：需要等待后端或后台服务响应
+    * 作用：提供验重等需要查询数据库的校验，校验、过滤和清洗数据
+    * 方式：
+        * 通常采用 Ajax 方式，将用户输入数据提交给后端或后台服务，再次校验规则或查询数据库，将校验结果作为响应返回。应用端或浏览器端根据响应结果，更改 class 或设置 style 展示不同的提示
+
+## 如何使用 HTML5 的内置表单数据校验 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+HTML5 内置表单数据校验通常包括校验属性、约束校验 API 及对应的 CSS 伪类
+
+1. 校验属性
+
+* 类型校验：设置 type 类型
+    * email url 类型限制输入文字必须为邮箱或网址
+    * 其它非 text 类型，通过控件，触屏端唤起数字键盘等，来限制用户输入类型
+* 非空必填校验：声明 required 属性即可
+* 长度校验：设置 minlength 和 maxlength 属性限制长度
+* 数字 / 日期 / 范围：设置 min 和 max 属性设置数值范围、起止日期、range 范围
+    * 步长：step 与 min 或 max 其中至少一个一起设置时，限制值的有效性
+
+2. Constraint Validation API 约束验证 API
+
+* 属性
+    * validationMessage 本地化消息
+        * 描述元素不满足校验条件时的文本信息
+        * 无需校验或满足校验条件时，为空
+    * validity ValidityState 对象，每一个子项都返回布尔值
+        * customError 是否设置了自定义错误
+        * patternMismatch 是否匹配正则表达式
+        * rangeOverflow 元素的值是否高于所设置最大值
+        * rangeUnderflow 元素的值是否低于所设置最小值
+        * stepMismatch 元素的值是否符合 step 属性规则
+        * tooLong 元素的值是否超过最大长度
+        * typeMismatch 元素的值是否出现语法错误
+        * valid 元素的值是否有效
+        * valueMissing 元素的值是否 required 且为空
+        * willValidate 元素的值是否是在表单提交时被校验
+* 方法
+    * checkValidity() 校验元素的值是否有效
+    * reportValidity() 元素报告其校验状态，重新展示校验失败提示给用户
+    * setCustomValidity(message) 为元素添加自定义的错误消息
+
+3. 伪类
+
+`:valid` 有效
+
+`:invalid` 无效
+
+`:in-range` 在范围内
+
+`:out-of-range` 超出范围
+
+## 使用 JavaScript 发送表单数据都有哪些方法 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+使用 JavaScript 发送表单数据，需要两步骤
+
+首先，构造请求参数
+
+* 构建查询字符串
+    * 使用 ES3
+```js
+const buildParam = data => {
+  const dataPairs = []
+  for (const key in data) 
+    dataPairs.push(encodeURIComponent(key) + encodeURIComponent(data[key]))
+  return dataPairs.join('&').replace(/%20/g, '+')
+}
+```
+* 使用 jQuery
+```js
+const buidParam = form => $(form).serialize()
+```
+* 使用 FormData 对象
+    * 将对象转为 FormData 对象
+```js
+const buildParam = data => {
+  const formData = new FormData()
+  for (const key in data)
+    formData.append(key, data[key])
+  return formData
+}
+```
+
+* 将表单元素构建 `FormData` 对象
+```js
+const buildParam = form => {
+  const formData = new FormData(form)
+  return formData
+}
+```
+然后，发送数据
+
+* 使用 XMLHttpRequest 对象
+```js
+const send = (url, param, cb) => {
+  const request = new XMLHttpRequest()
+  request.addEventListener('load', e => cb(null, e => cb(e.target.responseText)))
+  request.addEventListener('error', e => cb(e.message))
+  request.open('POST', url)
+  request.send(param)
+}
+```
+* 使用 jQuery
+```js
+const send = (url, param, cb) => {
+  $.ajax({
+    url,
+    type: 'post',
+    data: param
+  }).done(data => cb(null, data)).fail((_. textStatus) => cb(textStatus))
+}
+```
+* 使用 fetch 方法
+```js
+const send = (url, param, cb) => {
+  fetch(url, {
+    method: 'POST',
+    body: param
+  }).then(response => cb(null, response)).catch(error => cb(error))
+}
+```
+
+## 如何自定义表单元素的样式 ？
+##### 难度：★ ★ ☆ ☆ ☆  面试高频指数：★ ☆ ☆ ☆ ☆
+
+首先，由于表单元素先于 CSS 被添加到 HTML，早期的渲染依靠底层系统实现，至今，表单元素在不同浏览器，同一浏览器的不同系统版本中，存在不同的默认外观。
+
+自定义表单样式的方法：
+
+* 使用 JavaScript + HTML + CSS 重建表单元素，模拟其交互行为。最终通过 UI 组件库的方式供设计团队参考和业务开发调用。
+    * 保持跨浏览器，跨操作系统的一致性
+    * 可以自定义所有样式
+    * 交互、校验、提交等都需要自己完成，代码多，复杂度高
+    * JavaScript 出错或禁用，CSS 加载失败，都可能导致表单失效。在稳定性要求高的场景，需要能降级到原生表单元素
+* 自定义原生表单元素的样式
+    * 原生表单元素按应用 CSS 的难度 ，分为三类
+        * 容易应用，跨平台不易出问题：`<form>` `<fieldset>` `<label>` `<output>`
+        * 难应用，不同平台写不同属性：`<legend>` `checkbox` `radio` `placeholder`
+        * 不推荐应用：`<select>` `<option>` `<optgroup>` `<datelist>` `<progress>` `<meter>`
+    * 保持跨平台一致性
+        * 字体和文本大小：继承父级元素的 CSS，而不使用系统默认样式
+        ```css
+        button, input, select, textarea {
+        font-family: inherit;
+        font-size: 100%;
+        }
+        ```
+        * 盒子模型：保持相同的宽度和高度
+        ```css
+        button, input, select, textarea {
+        -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        }
+        ```
+
+* 定位
+    * `<legend>` 元素定位是 `<fieledset>` 父元素的上边框的最顶端
+    * `<textarea>` 元素的垂直对齐由基线改为顶端对齐 `vertical-align: top`
+
+* 清除默认样式
+    * `-moz-appearance` 清除 Firefox 表单元素的默认样式
+    * `-webkit-appearance` 清除 Safari 和 Chrome 表单元素的默认样式
+* 使用 CSS 伪类定义表单组件的细节
+* CSS 2.1 支持 3 伪类：`:active` `:focus` `:hover`
+* CSS Selector Level 3 新增 4 伪类：`:enabled` `:disabled` `:checked` `:indeterminate`
+* CSS Basic UI Level 3 新增 9 伪类：`:default` `:valid` `:invalid` `:in-range` `:out-of-range` `:required` `:optional` `:read-only` `:read-write`
+* CSS Selector Level 4 新增： `:user-error`
+
 
